@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-deployment
+  
+spec:
+  selector:
+    matchLabels:
+      app: dev-pod
+  template:
+    metadata:
+      labels:
+        app: dev-pod
+    spec:
+      containers:
+      - name: dev-container
+        image: soufiane01/schahid-iot:v1
+        ports:
+        - containerPort: 80
